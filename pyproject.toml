@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "python_package"
+license = "MIT"
+version = "0.0.0"
+readme = "README.md"
+description = "A minimal Python package for a CLI app with automated unit tests and continuous integration bundled using poetry."
+# homepage = "https://poet.modar.me"
+repository = "https://github.com/ModarTensai/python_package"
+# documentation = "https://poet.modar.me/docs/"
+keywords = ["pyproject", "skeleton"]
+authors = ["ModarTensai <ModarTensai@gmail.com>"]
+packages = [
+    { include = "python_package", from = "." }
+]
+include = ["READEME.md"]
+exclude = ["tests/*"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry.dev-dependencies]
+pep8 = "^1.7.1"
+pylint = "^2.2.2"
+pytest = "^3.0"
+mkdocs = "^1.0.4"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
