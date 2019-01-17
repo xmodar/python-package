@@ -1,0 +1,6 @@
+site_name: Python Package
+nav:
+  - Home: index.md
+  - Requirements: requirements.md
+  - Usage: usage.md
+theme: readthedocs

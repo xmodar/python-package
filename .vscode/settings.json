@@ -1,6 +1,13 @@
 {
     "python.pythonPath": ".venv/bin/python",
+    "files.exclude": {
+        "site": true,
+        "*.egg-info": true
+    },
     "cSpell.words": [
+        "mypy",
+        "pathlib",
+        "subdomain",
         "bungcip",
         "toml",
         "jupyter",
