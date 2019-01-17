@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Requirements - Python Package</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Requirements";
+    var mkdocs_page_input_path = "requirements.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Python Package</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Requirements</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#requirements">Requirements</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#installing-python-37-on-ubuntu-optional">Installing python 3.7 on Ubuntu (optional)</a></li>
+        
+            <li><a class="toctree-l3" href="#create-a-python-virtual-environment-on-ubuntu">Create a python virtual environment on Ubuntu</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-jupyterlab-optional">Installing jupyterlab (optional)</a></li>
+        
+            <li><a class="toctree-l3" href="#installing-poetry">Installing poetry</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../usage/">Usage</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Python Package</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Requirements</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="requirements">Requirements</h1>
+<p>We will need <a href="https://www.python.org/">python</a> to be installed but we don't want to use <a href="https://conda.io">conda</a> the package manager. The main reason for this, is to break free from the conflict issues mentioned <a href="https://www.anaconda.com/blog/developer-blog/understanding-conda-pip/">here</a> and to only use semi-standard tools like <a href="https://poetry.eustace.io/">poetry</a> with <a href="https://pip.pypa.io/en/stable/">pip</a>. We can go the route of using <a href="https://www.docker.com/">Docker</a> containers to install python as described <a href="https://blog.realkinetic.com/building-minimal-docker-containers-for-python-applications-37d0272c52f3">here</a> and run it using bash aliases similar to <a href="https://hub.docker.com/r/chenzj/dfimage/">this</a>. However, we will use a different approach.</p>
+<h2 id="installing-python-37-on-ubuntu-optional">Installing python 3.7 on Ubuntu (optional)</h2>
+<p>You are encouraged not to override the default python installation in your linux machine. Instead, have an independent installation which you use to create virtual environments.</p>
+<pre><code class="sh"># source: https://tecadmin.net/install-python-3-7-on-ubuntu-linuxmint/
+
+# install the dependencies
+sudo apt-get install build-essential checkinstall
+sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev \
+    libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev
+
+# download the source code
+cd /usr/src
+sudo wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz
+sudo tar xvf Python-3.7.2.tar.xz
+
+# compile the source code
+cd Python-3.7.2
+sudo ./configure --enable-optimizations
+sudo make altinstall  # use altinstall to prevent replacing the default python
+
+# if you faced a warning message in the make like
+# &quot;... directory is not owned by the current user and the cache has been disabled ...&quot;
+# do the following
+sudo chown $USER: /home/$USER/.cache/pip
+
+# now it should be installed and available if you run
+python3.7 -V
+pip3.7 -V
+
+# now create a root virtual environment
+</code></pre>
+
+<h2 id="create-a-python-virtual-environment-on-ubuntu">Create a python virtual environment on Ubuntu</h2>
+<p>You are always encouraged to use virtual environments instead of working on the original python installation. Therefore, we will install <code>venv</code> and use it to create a root virtual environment and put it in <code>~/.python/bin</code>.</p>
+<pre><code class="sh">python3.7 -m venv ~/.python --prompt py
+</code></pre>
+
+<p>If you didn't install Python 3.7, you can use this:</p>
+<pre><code class="sh">sudo apt-get install python3-venv
+python3 -m venv ~/.python
+</code></pre>
+
+<p>This way, even if we missed up when installing dependencies and we wanted to start from a clean python installation, we can just delete the environment and create a clean new one.</p>
+<pre><code class="sh">rm -rf ~/.python
+python3.7 -m venv ~/.python --prompt py
+</code></pre>
+
+<p>To activate the environment:</p>
+<pre><code class="sh">source ~/.python/bin/activate
+</code></pre>
+
+<p>In <a href="./vs.code-workspace">vs.code-workspace</a>, we are making this as the default virtual environment. However, we will be overriding it with the virtual environment that will be created later using poetry.</p>
+<h2 id="installing-jupyterlab-optional">Installing jupyterlab (optional)</h2>
+<p>Refer to the documentation <a href="https://jupyterlab.readthedocs.io/en/stable/">page</a>:</p>
+<pre><code class="sh">~/.python/bin/pip install jupyterlab
+
+# create a link and make jupyter and ipython available anywhere
+# this assumes ~/.local/bin is in PATH
+ln -s ~/.python/bin/jupyter ~/.local/bin/
+ln -s ~/.python/bin/ipython ~/.local/bin/
+</code></pre>
+
+<p>To see the list of added kernels to jupyter and edit them:</p>
+<pre><code class="sh">jupyter kernelspec list
+# jupyter kernelspec uninstall bad_kernel
+</code></pre>
+
+<p>To list any newly created virtual environment in jupyter, you need to activate it first then:</p>
+<pre><code class="sh">pip install ipykernel
+python -m ipykernel install --user --name awesome_kernel
+</code></pre>
+
+<p>Now to run jupyterlab:</p>
+<pre><code class="sh">jupyter lab
+</code></pre>
+
+<h2 id="installing-poetry">Installing poetry</h2>
+<p>Refer to the GitHub <a href="https://github.com/sdispater/poetry">page</a>:</p>
+<pre><code class="sh">~/.python/bin/pip install poetry
+ln -s ~/.python/bin/poetry ~/.local/bin/
+poetry config settings.virtualenvs.in-project true
+</code></pre>
+
+<p>To enable tab completion for Bash, run this and restart the terminal:</p>
+<pre><code class="sh">poetry completions bash &gt; poetry.bash-completion
+sudo mv poetry.bash-completion /etc/bash_completion.d
+</code></pre>
+
+<p>Now clone this repository and install it using poetry. The goal is to create a new virtual environment, which will be used for development:</p>
+<pre><code class="sh">git clone https://github.com/ModarTensai/python_package
+cd python_package
+poetry install --extras jupyter
+</code></pre>
+
+<p>If you pass <code>--no-dev</code> to <code>poetry install</code>, the <code>dev-dependencies</code> in <a href="./pyproject.toml">pyproject.toml</a> will not be installed. Refer to the <a href="https://poetry.eustace.io/">documentation</a> for more information.</p>
+<p>To run anything in this new virtual environment use:</p>
+<pre><code class="sh">poetry run python -V
+# poetry shell  # use this to spawn inside the environment
+</code></pre>
+
+<p>For example, to add this virtual environment to jupyter:</p>
+<pre><code class="sh">poetry run pip install ipykernel
+poetry run python -m ipykernel install --user --name python_package
+</code></pre>
+
+<p>If you want to remove it later from jupyter:</p>
+<pre><code class="sh">jupyter kernelspec uninstall python_package 
+</code></pre>
+
+<p>To clear the cache and recreate the virtual environment again, you need to delete it first:</p>
+<pre><code class="sh">rm -rf .venv
+poetry cache:clear --all .
+poetry install --extras jupyter
+</code></pre>
+
+<p>If you didn't enable the in-project virtual environment setting:</p>
+<pre><code class="sh"># instead of running: rm -rf .venv
+# get the directory of the environment and remove it
+rm -rf $(dirname $(dirname $(poetry run which python)))
+</code></pre>
+
+<!-- rm -rf $(readlink -f $(dirname $(poetry run which python))/..) -->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usage/" class="btn btn-neutral float-right" title="Usage">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../usage/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
