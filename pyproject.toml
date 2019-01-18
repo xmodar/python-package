@@ -17,10 +17,15 @@ exclude = ["tests/*"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
+pyenchant = "^2.0.0"
+PyDictionary = "^1.5.2"
 
 [tool.poetry.dev-dependencies]
+yapf = "^0.25.0"
 pep8 = "^1.7.1"
 pylint = "^2.2.2"
+mypy = "^0.660"
+pydocstyle = "^3.0.0"
 pytest = "^3.0"
 mkdocs = "^1.0.4"
 

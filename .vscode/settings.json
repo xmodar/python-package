@@ -5,6 +5,8 @@
         "*.egg-info": true
     },
     "cSpell.words": [
+        "pydocstyle",
+        "mkdir",
         "mypy",
         "pathlib",
         "subdomain",
