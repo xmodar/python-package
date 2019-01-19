@@ -21,3 +21,9 @@ site/
 
 # mypy cache folder
 .mypy_cache/
+
+# pytest cache folder
+.pytest_cache/
+
+# tox cache folder
+.tox/

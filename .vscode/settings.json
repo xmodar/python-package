@@ -2,9 +2,14 @@
     "python.pythonPath": ".venv/bin/python",
     "files.exclude": {
         "site": true,
+        ".tox": true,
+        ".mypy_cache": true,
+        ".pytest_cache": true,
         "*.egg-info": true
     },
     "cSpell.words": [
+        "isort",
+        "envvar",
         "levelname",
         "asctime",
         "getenv",

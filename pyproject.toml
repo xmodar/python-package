@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "python_package"
 license = "MIT"
-version = "0.0.0"
+version = "0.0.0"  # make sure it is consistent with package.__version__
 readme = "README.md"
 description = "A minimal Python package for a CLI app with automated unit tests and continuous integration bundled using poetry."
 # homepage = "https://python_package.modar.me"
@@ -15,8 +15,12 @@ packages = [
 include = ["READEME.md", "logging.json"]
 exclude = ["tests/*"]
 
+[tool.poetry.scripts]
+english = 'python_package:cli.main'
+
 [tool.poetry.dependencies]
 python = "^3.6"
+click = "^7.0"
 pyyaml = "^3.13"
 pyenchant = "^2.0.0"
 PyDictionary = "^1.5.2"
@@ -34,6 +38,7 @@ pylint = "^2.2.2"
 mypy = "^0.660"
 pydocstyle = "^3.0.0"
 pytest = "^3.0"
+tox = "^3.7.0"
 mkdocs = "^1.0.4"
 
 [build-system]

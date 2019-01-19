@@ -14,10 +14,9 @@ This is a minimal python package for a CLI app with automated unit tests and con
  - An example package of an English dictionary with the following:
     - Follows the guidelines specified by the mentioned linters
     - Type hints and annotations with [mypy](http://mypy-lang.org/)
-    - uses [pathlib](https://docs.python.org/3/library/pathlib.html) and [logging](https://realpython.com/python-logging/)
-    - [TODO] has a CLI using [click](https://click.palletsprojects.com/en/7.x/)
-    - [TODO] unit testing using [pytest](https://pytest.org) (and maybe [pytest-mock](https://pypi.org/project/pytest-mock/))
- - [TODO] automated testing using [tox](https://tox.readthedocs.io/en/latest/)
+    - Uses [pathlib](https://docs.python.org/3/library/pathlib.html), [logging](https://realpython.com/python-logging/) and [click](https://click.palletsprojects.com/en/7.x/)
+    - Unit tested using [pytest](https://pytest.org) (to do: trying [pytest-mock](https://pypi.org/project/pytest-mock/))
+ - Automated testing using [tox](https://tox.readthedocs.io/en/latest/)
  - [TODO] continuous integration using [Travis-CI](https://travis-ci.com/)
  - [TODO] GitHub badges using [shields](https://shields.io/)
  - [TODO] MAYBE Makefile and VS Code tasks

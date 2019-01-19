@@ -3,6 +3,8 @@ from logging import NullHandler, getLogger
 from pathlib import Path
 from typing import Dict, Text, Union
 
+from . import cli
+from .__version__ import __version__
 from .english import *
 from .utils.io import read_dict
 
