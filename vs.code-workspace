@@ -32,7 +32,10 @@
 				72, // maximum recomended documentation line length
 				79, // maximum recomended code line length
 				119 // maximum recomended GitHub line length
-			]
+			],
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": true
+			}
 		},
 		"python.pythonPath": "${env:HOME}${env:HOMEPATH}/.python/bin/python",
 		"python.formatting.provider": "yapf",
@@ -48,9 +51,10 @@
 			"--ignore=E731,E741"
 		],
 		"python.linting.pylintArgs": [
-			"--disable=C0111,C0103,C0411,C1801,R0913",
-			"--generated-members=torch.**, argparse.Namespace.**",
-			"--ignored-modules=torch"
+			// "--generated-members=torch.*,argparse.Namespace.*",
+			// "--ignored-modules=torch",
+			// "--enable=unused-import",
+			"--disable=C0111,C0103,C0411,C1801,R0913,R0903"
 		],
 		"python.linting.mypyArgs": [
 			"--ignore-missing-imports",

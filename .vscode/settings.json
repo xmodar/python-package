@@ -5,6 +5,9 @@
         "*.egg-info": true
     },
     "cSpell.words": [
+        "levelname",
+        "asctime",
+        "getenv",
         "pydocstyle",
         "mkdir",
         "mypy",

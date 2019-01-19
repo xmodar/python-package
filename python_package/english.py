@@ -1,4 +1,5 @@
 """English dictionary module."""
+from logging import getLogger
 from typing import Dict, List, Optional, Union
 
 from enchant import Dict as Spell
@@ -6,7 +7,11 @@ from PyDictionary import PyDictionary
 
 from .utils.io import CaptureStdStreams
 
+del Optional  # for pylint-W0611 because mypy
+
 __all__ = ['English']
+
+_log = getLogger(__name__)
 
 
 class English:
@@ -27,6 +32,7 @@ class English:
         """Initialize the dictionaries."""
         self._spell = Spell('en_US')
         self._dictionary = PyDictionary('html.parser')
+        _log.debug('Initialized %s instance correctly', type(self).__name__)
 
     def check(self, word):
         # type: (str) -> bool
@@ -71,6 +77,7 @@ class English:
             out = self._dictionary.meaning(
                 word)  # type: Optional[English.TypeMeanings]
         if out is None:
+            _log.debug('Could not find any meaning to %s', word)
             return {}
         return out
 
@@ -88,6 +95,7 @@ class English:
         with CaptureStdStreams():
             out = self._dictionary.synonym(word)  # type: Optional[List[str]]
         if out is None:
+            _log.debug('Could not find any synonym to %s', word)
             return []
         return out
 
@@ -105,6 +113,7 @@ class English:
         with CaptureStdStreams():
             out = self._dictionary.antonym(word)  # type: Optional[List[str]]
         if out is None:
+            _log.debug('Could not find any antonym to %s', word)
             return []
         return out
 

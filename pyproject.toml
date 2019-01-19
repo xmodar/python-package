@@ -12,13 +12,20 @@ authors = ["ModarTensai <ModarTensai@gmail.com>"]
 packages = [
     { include = "python_package", from = "." }
 ]
-include = ["READEME.md"]
+include = ["READEME.md", "logging.json"]
 exclude = ["tests/*"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
+pyyaml = "^3.13"
 pyenchant = "^2.0.0"
 PyDictionary = "^1.5.2"
+
+# extras need to follow `tool.poetry.dependencies`
+ipykernel = { version = "^5.1.0", optional = true }
+
+[tool.poetry.extras]
+jupyter = ["ipykernel"]
 
 [tool.poetry.dev-dependencies]
 yapf = "^0.25.0"
@@ -28,12 +35,6 @@ mypy = "^0.660"
 pydocstyle = "^3.0.0"
 pytest = "^3.0"
 mkdocs = "^1.0.4"
-
-# extras
-ipykernel = { version = "^5.1.0", optional = true }
-
-[tool.poetry.extras]
-jupyter = ["ipykernel"]
 
 [build-system]
 requires = ["poetry>=0.12"]
