@@ -38,6 +38,7 @@ pylint = "^2.2.2"
 mypy = "^0.660"
 pydocstyle = "^3.0.0"
 pytest = "^3.0"
+pytest-cov = "^2.6.1"
 tox = "^3.7.0"
 mkdocs = "^1.0.4"
 

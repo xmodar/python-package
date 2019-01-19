@@ -5,9 +5,11 @@
         ".tox": true,
         ".mypy_cache": true,
         ".pytest_cache": true,
+        ".coverage": true,
         "*.egg-info": true
     },
     "cSpell.words": [
+        "unittest",
         "isort",
         "envvar",
         "levelname",

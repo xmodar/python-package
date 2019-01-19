@@ -2,6 +2,8 @@
 
 This is a minimal python package for a CLI app with automated unit tests and continuous integration bundled using [poetry](https://poetry.eustace.io/).
 
+This project can take a lot of inspirations from [pendulum](https://github.com/sdispater/pendulum), which is made by the developer of poetry.
+
 ## Features
 
  - It has a [LICENSE](./LICENSE) file
@@ -15,8 +17,8 @@ This is a minimal python package for a CLI app with automated unit tests and con
     - Follows the guidelines specified by the mentioned linters
     - Type hints and annotations with [mypy](http://mypy-lang.org/)
     - Uses [pathlib](https://docs.python.org/3/library/pathlib.html), [logging](https://realpython.com/python-logging/) and [click](https://click.palletsprojects.com/en/7.x/)
-    - Unit tested using [pytest](https://pytest.org) (to do: trying [pytest-mock](https://pypi.org/project/pytest-mock/))
- - Automated testing using [tox](https://tox.readthedocs.io/en/latest/)
+    - Unit tested using [pytest](https://pytest.org) ([TODO] trying [pytest-mock](https://pypi.org/project/pytest-mock/))
+ - Automated testing using [tox](https://tox.readthedocs.io/en/latest/) and stats using [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/)
  - [TODO] continuous integration using [Travis-CI](https://travis-ci.com/)
  - [TODO] GitHub badges using [shields](https://shields.io/)
  - [TODO] MAYBE Makefile and VS Code tasks
@@ -39,6 +41,8 @@ The assumed operating system is Ubuntu and follow the [documentation](https://py
 We recommend using [VS Code](https://code.visualstudio.com/) and following the instructions provided [here](https://python_package.modar.me/usage/).
 
 - [Documentation and GitHub Pages hosting](https://python_package.modar.me/usage/#documentation)
+- [Command Line Interface (CLI)](https://python_package.modar.me/usage/#command-line-interface-cli)
+- [Linting and testing](https://python_package.modar.me/usage/#linting-and-testing)
 
 ## License
 

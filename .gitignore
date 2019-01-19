@@ -24,6 +24,7 @@ site/
 
 # pytest cache folder
 .pytest_cache/
+.coverage
 
 # tox cache folder
 .tox/

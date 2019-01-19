@@ -64,7 +64,7 @@ To activate the environment:
 source ~/.python/bin/activate
 ```
 
-In [vs.code-workspace](./vs.code-workspace), we are making this as the default virtual environment. However, we will be overriding it with the virtual environment that will be created later using poetry.
+In `vs.code-workspace`, we are making this as the default virtual environment. However, we will be overriding it with the virtual environment that will be created later using poetry.
 
 ## Installing jupyterlab (optional)
 
@@ -124,7 +124,7 @@ cd python_package
 poetry install --extras jupyter
 ```
 
-If you pass `--no-dev` to `poetry install`, the `dev-dependencies` in [pyproject.toml](./pyproject.toml) will not be installed. Refer to the [documentation](https://poetry.eustace.io/) for more information.
+If you pass `--no-dev` to `poetry install`, the `dev-dependencies` in `pyproject.toml` will not be installed. Refer to the [documentation](https://poetry.eustace.io/) for more information.
 
 To run anything in this new virtual environment use:
 
