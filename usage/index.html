@@ -205,10 +205,12 @@ Commands:
 </code></pre>
 
 <h3 id="linting-and-testing">Linting and testing</h3>
-<p>Fortunately linting is automatically done through the recommended VS Code extensions in <code>extensions.json</code>. As for unit testing and code coverage, both can be achieved through <a href="https://pytest.org">pytest</a> and <a href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a>, respectively. In theory, we could use <a href="https://docs.python.org/3.7/library/unittest.html">unittest</a> and <a href="https://pypi.org/project/pytest-mock/">pytest-mock</a> to test each and every unit in our package. However, we only implemented two unit tests using <a href="https://click.palletsprojects.com/en/7.x/testing/">click.testing</a>.</p>
+<p>Fortunately linting is automatically done through the recommended VS Code extensions in <code>extensions.json</code>. As for unit testing and code coverage, both can be achieved through <a href="https://pytest.org">pytest</a> and <a href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a>, respectively. In theory, we could use <a href="https://docs.python.org/3.7/library/unittest.html">unittest</a> and <a href="https://pypi.org/project/pytest-mock/">pytest-mock</a> to test each and every unit in our package. However, we only implemented two unit tests using <a href="https://click.palletsprojects.com/en/7.x/testing/">click.testing</a>. This <a href="https://realpython.com/python-testing">tutorial</a> is a good reference to get you up and running with python testing.</p>
 <pre><code class="sh">pytest tests  # run pytest only
 py.test --cov=python_package tests  # run pytest and coverage
 </code></pre>
+
+<p>To incorporate this workflow with continuous integration (CI) service like <a href="https://travis-ci.com/">Travis-CI</a>, we can follow their <a href="https://docs.travis-ci.com/user/customizing-the-build">documentation</a> to generate the <code>.travis.yml</code> file. The final step is to link it with GitHub and maybe hook GitHup Pages <a href="https://docs.travis-ci.com/user/deployment/pages/">deployment</a>.</p>
               
             </div>
           </div>
