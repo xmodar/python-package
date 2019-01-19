@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.7"
+install:
+  - pip install pip -U
+  - curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+  - poetry config settings.virtualenvs.in-project true
+  - poetry install -v
+script:
+  - poetry run pytest --cov=python_package tests -W ignore

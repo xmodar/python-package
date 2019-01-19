@@ -68,9 +68,11 @@ Commands:
 
 ### Linting and testing
 
-Fortunately linting is automatically done through the recommended VS Code extensions in `extensions.json`. As for unit testing and code coverage, both can be achieved through [pytest](https://pytest.org) and [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), respectively. In theory, we could use [unittest](https://docs.python.org/3.7/library/unittest.html) and [pytest-mock](https://pypi.org/project/pytest-mock/) to test each and every unit in our package. However, we only implemented two unit tests using [click.testing](https://click.palletsprojects.com/en/7.x/testing/).
+Fortunately linting is automatically done through the recommended VS Code extensions in `extensions.json`. As for unit testing and code coverage, both can be achieved through [pytest](https://pytest.org) and [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/), respectively. In theory, we could use [unittest](https://docs.python.org/3.7/library/unittest.html) and [pytest-mock](https://pypi.org/project/pytest-mock/) to test each and every unit in our package. However, we only implemented two unit tests using [click.testing](https://click.palletsprojects.com/en/7.x/testing/). This [tutorial](https://realpython.com/python-testing) is a good reference to get you up and running with python testing.
 
 ```sh
 pytest tests  # run pytest only
 py.test --cov=python_package tests  # run pytest and coverage
 ```
+
+To incorporate this workflow with continuous integration (CI) service like [Travis-CI](https://travis-ci.com/), we can follow their [documentation](https://docs.travis-ci.com/user/customizing-the-build) to generate the `.travis.yml` file. The final step is to link it with GitHub and maybe hook GitHup Pages [deployment](https://docs.travis-ci.com/user/deployment/pages/).

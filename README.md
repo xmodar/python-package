@@ -19,7 +19,7 @@ This project can take a lot of inspirations from [pendulum](https://github.com/s
     - Uses [pathlib](https://docs.python.org/3/library/pathlib.html), [logging](https://realpython.com/python-logging/) and [click](https://click.palletsprojects.com/en/7.x/)
     - Unit tested using [pytest](https://pytest.org) ([TODO] trying [pytest-mock](https://pypi.org/project/pytest-mock/))
  - Automated testing using [tox](https://tox.readthedocs.io/en/latest/) and stats using [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/)
- - [TODO] continuous integration using [Travis-CI](https://travis-ci.com/)
+ - Continuous integration (CI) using [Travis-CI](https://travis-ci.com/)
  - [TODO] GitHub badges using [shields](https://shields.io/)
  - [TODO] MAYBE Makefile and VS Code tasks
  - [TODO] publish on [PyPI](https://pypi.org/) (and maybe [conda](https://conda.io))
