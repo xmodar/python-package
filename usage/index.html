@@ -69,6 +69,10 @@
         
             <li><a class="toctree-l3" href="#documentation">Documentation</a></li>
         
+            <li><a class="toctree-l3" href="#command-line-interface-cli">Command Line Interface (CLI)</a></li>
+        
+            <li><a class="toctree-l3" href="#linting-and-testing">Linting and testing</a></li>
+        
         </ul>
     
 
@@ -108,12 +112,12 @@
             <div class="section">
               
                 <h2 id="usage">Usage</h2>
-<p>We recommend using <a href="https://code.visualstudio.com/">VS Code</a>, which we configured to work with this project using <a href="./vs.code-workspace">vs.code-workspace</a> and <a href="./.vscode/settings.json">settings.json</a>. You can always use a different IDE but you need to make sure to activate the virtual environment you created inside <code>.venv</code> folder previously.</p>
+<p>We recommend using <a href="https://code.visualstudio.com/">VS Code</a>, which we configured to work with this project using <code>vs.code-workspace</code> and <code>settings.json</code>. You can always use a different IDE but you need to make sure to activate the virtual environment you created inside <code>.venv</code> folder previously.</p>
 <pre><code class="sh">source .venv/bin/activate
 </code></pre>
 
 <h3 id="documentation">Documentation</h3>
-<p>Adding documentation is as simple as modifying <a href="./mkdocs.yml">mkdocs.yml</a> and <a href="./docs">docs</a> folder. They are self-explanatory but for a very quick guide, refer to <a href="https://www.mkdocs.org/">this tutorial</a> on how to use mkdocs. We also used GitHub <a href="https://help.github.com/articles/user-organization-and-project-pages/#project-pages-sites">Project Pages</a> (as opposed to GitHub <a href="https://help.github.com/articles/user-organization-and-project-pages/#user-and-organization-pages-sites">Organization and User Pages</a>) as demonstrated in <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">this tutorial</a>. Finally, we setup a custom subdomain for the project page (consult <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">this manual</a>). Assuming you have already purchased a domain name and hosted your personal website on GitHub with the following records in the domain's DNS table:</p>
+<p>Adding documentation is as simple as modifying <code>mkdocs.yml</code> and <code>docs</code> folder. They are self-explanatory but for a very quick guide, refer to <a href="https://www.mkdocs.org/">this tutorial</a> on how to use mkdocs. We also used GitHub <a href="https://help.github.com/articles/user-organization-and-project-pages/#project-pages-sites">Project Pages</a> (as opposed to GitHub <a href="https://help.github.com/articles/user-organization-and-project-pages/#user-and-organization-pages-sites">Organization and User Pages</a>) as demonstrated in <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">this tutorial</a>. Finally, we setup a custom subdomain for the project page (consult <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">this manual</a>). Assuming you have already purchased a domain name and hosted your personal website on GitHub with the following records in the domain's DNS table:</p>
 <!-- table is generated using: https://www.tablesgenerator.com/markdown_tables -->
 
 <table>
@@ -170,13 +174,40 @@
 </tr>
 </tbody>
 </table>
-<p>Then, modify <a href="./docs/CNAME">CNAME</a> to reflect these changes. </p>
-<p>Once you are satisfied with your modifications to <a href="./mkdocs.yml">mkdocs.yml</a> and the <a href="./docs">documentation folder</a> and wants to test out your website:</p>
+<p>Then, modify the <code>CNAME</code> file in <code>docs</code> to reflect these changes. </p>
+<p>Once you are satisfied with your modifications to <code>mkdocs.yml</code> and the documentation folder and wants to test out your website:</p>
 <pre><code class="sh">mkdocs serve
 </code></pre>
 
 <p>If everything is in place, <strong>commit your changes first</strong>, then:</p>
 <pre><code class="sh">mkdocs gh-deploy
+</code></pre>
+
+<h3 id="command-line-interface-cli">Command Line Interface (CLI)</h3>
+<p>We used <a href="https://click.palletsprojects.com/en/7.x/">click</a> to implement a CLI for our example English dictionary package.</p>
+<pre><code class="sh">english
+</code></pre>
+
+<pre><code>Usage: english [OPTIONS] COMMAND [ARGS]...
+
+  English dictionary.
+
+Options:
+  -r, --run / -d, --debug  Whether to run without debugging.  [default: True]
+  -v, --version            Show the version and exit.
+  --help                   Show this message and exit.
+
+Commands:
+  antonyms     Get the different antonyms of a given word.
+  meanings     Get the different meanings of a given word.
+  suggestions  Get the different suggestions of a given word.
+  synonyms     Get the different synonyms of a given word.
+</code></pre>
+
+<h3 id="linting-and-testing">Linting and testing</h3>
+<p>Fortunately linting is automatically done through the recommended VS Code extensions in <code>extensions.json</code>. As for unit testing and code coverage, both can be achieved through <a href="https://pytest.org">pytest</a> and <a href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a>, respectively. In theory, we could use <a href="https://docs.python.org/3.7/library/unittest.html">unittest</a> and <a href="https://pypi.org/project/pytest-mock/">pytest-mock</a> to test each and every unit in our package. However, we only implemented two unit tests using <a href="https://click.palletsprojects.com/en/7.x/testing/">click.testing</a>.</p>
+<pre><code class="sh">pytest tests  # run pytest only
+py.test --cov=python_package tests  # run pytest and coverage
 </code></pre>
               
             </div>

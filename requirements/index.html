@@ -165,7 +165,7 @@ python3.7 -m venv ~/.python --prompt py
 <pre><code class="sh">source ~/.python/bin/activate
 </code></pre>
 
-<p>In <a href="./vs.code-workspace">vs.code-workspace</a>, we are making this as the default virtual environment. However, we will be overriding it with the virtual environment that will be created later using poetry.</p>
+<p>In <code>vs.code-workspace</code>, we are making this as the default virtual environment. However, we will be overriding it with the virtual environment that will be created later using poetry.</p>
 <h2 id="installing-jupyterlab-optional">Installing jupyterlab (optional)</h2>
 <p>Refer to the documentation <a href="https://jupyterlab.readthedocs.io/en/stable/">page</a>:</p>
 <pre><code class="sh">~/.python/bin/pip install jupyterlab
@@ -208,7 +208,7 @@ cd python_package
 poetry install --extras jupyter
 </code></pre>
 
-<p>If you pass <code>--no-dev</code> to <code>poetry install</code>, the <code>dev-dependencies</code> in <a href="./pyproject.toml">pyproject.toml</a> will not be installed. Refer to the <a href="https://poetry.eustace.io/">documentation</a> for more information.</p>
+<p>If you pass <code>--no-dev</code> to <code>poetry install</code>, the <code>dev-dependencies</code> in <code>pyproject.toml</code> will not be installed. Refer to the <a href="https://poetry.eustace.io/">documentation</a> for more information.</p>
 <p>To run anything in this new virtual environment use:</p>
 <pre><code class="sh">poetry run python -V
 # poetry shell  # use this to spawn inside the environment
