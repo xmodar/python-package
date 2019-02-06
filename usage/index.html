@@ -157,7 +157,7 @@
 </tbody>
 </table>
 <p>Note: these IP addresses are from <a href="https://help.github.com/articles/setting-up-an-apex-domain/">this page</a>.</p>
-<p>Now to link your project page to your domain as <code>python_package.example.com</code> add:</p>
+<p>Now to link your project page to your domain as <code>python-package.example.com</code> add:</p>
 <table>
 <thead>
 <tr>
@@ -169,12 +169,13 @@
 <tbody>
 <tr>
 <td>CNAME</td>
-<td>python_package</td>
+<td>python-package</td>
 <td>&lt;github-username&gt;.github.io</td>
 </tr>
 </tbody>
 </table>
 <p>Then, modify the <code>CNAME</code> file in <code>docs</code> to reflect these changes. </p>
+<p>Note: The name of the package <a href="https://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_hostnames">must not</a> have an underscore "_" in order to enable HTTPS for the domain name. Use "-" instead.</p>
 <p>Once you are satisfied with your modifications to <code>mkdocs.yml</code> and the documentation folder and wants to test out your website:</p>
 <pre><code class="sh">mkdocs serve
 </code></pre>
