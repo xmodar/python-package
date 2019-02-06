@@ -1,10 +1,10 @@
 # Python Package
 
-[![Last Commit](https://img.shields.io/github/last-commit/ModarTensai/python_package.svg)](https://github.com/ModarTensai/python_package/commits/master)
-[![Repository Size](https://img.shields.io/github/repo-size/ModarTensai/python_package.svg)](https://github.com/ModarTensai/python_package/archive/master.zip)
-[![Build Status](https://travis-ci.com/ModarTensai/python_package.svg?token=nsBux3TDRWWpFxuY8dgp&branch=master)](https://travis-ci.com/ModarTensai/python_package)
-[![Total Downloads](https://img.shields.io/github/downloads/ModarTensai/python_package/total.svg)](https://github.com/ModarTensai/python_package/archive/master.zip)
-[![License](https://img.shields.io/github/license/ModarTensai/python_package.svg)](https://github.com/ModarTensai/python_package/blob/master/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/ModarTensai/python-package.svg)](https://github.com/ModarTensai/python-package/commits/master)
+[![Repository Size](https://img.shields.io/github/repo-size/ModarTensai/python-package.svg)](https://github.com/ModarTensai/python-package/archive/master.zip)
+[![Build Status](https://travis-ci.com/ModarTensai/python-package.svg?token=nsBux3TDRWWpFxuY8dgp&branch=master)](https://travis-ci.com/ModarTensai/python-package)
+[![Total Downloads](https://img.shields.io/github/downloads/ModarTensai/python-package/total.svg)](https://github.com/ModarTensai/python-package/archive/master.zip)
+[![License](https://img.shields.io/github/license/ModarTensai/python-package.svg)](https://github.com/ModarTensai/python-package/blob/master/LICENSE)
 
 
 This is a minimal python package for a CLI app with automated unit tests and continuous integration bundled using [poetry](https://poetry.eustace.io/).
@@ -16,7 +16,7 @@ This project can take a lot of inspirations from [pendulum](https://github.com/s
  - It has a [LICENSE](./LICENSE) file
  - It has a [README.md](./README.md) file
  - It is bundled using [poetry](https://poetry.eustace.io/)
- - [mkdocs](https://www.mkdocs.org/) documentation published using [GitHub pages](https://pages.github.com/) on a [custom domain](https://python_package.modar.me)
+ - [mkdocs](https://www.mkdocs.org/) documentation published using [GitHub pages](https://pages.github.com/) on a [custom domain](https://python-package.modar.me)
  - Shipped with a [VS Code](https://code.visualstudio.com/)'s workspace [file](./vs.code-workspace) and recommended [extensions](./.vscode/extensions.json)
     - Configured for python linting with [pep8](https://pypi.org/project/pep8/), [pylint](https://www.pylint.org/), [mypy](http://mypy-lang.org/) and [pydocstyle](http://www.pydocstyle.org/en/3.0.0/usage.html)
     - Enables auto-formating with Google style using [yapf](https://github.com/google/yapf) and [isort](https://pypi.org/project/isort/)
@@ -35,20 +35,20 @@ This project can take a lot of inspirations from [pendulum](https://github.com/s
 
 ## Requirements
 
-The assumed operating system is Ubuntu and follow the [documentation](https://python_package.modar.me/requirements/):
+The assumed operating system is Ubuntu and follow the [documentation](https://python-package.modar.me/requirements/):
 
- - [Install Python 3.7](https://python_package.modar.me/requirements/#installing-python-37-on-ubuntu-optional) (optional)
- - [Create a virtual environment](https://python_package.modar.me/requirements/#create-a-python-virtual-environment-on-ubuntu)
- - [Install JupyterLab](https://python_package.modar.me/requirements/#installing-jupyterlab-optional) (optional)
- - [Install Poetry](https://python_package.modar.me/requirements/#installing-poetry)
+ - [Install Python 3.7](https://python-package.modar.me/requirements/#installing-python-37-on-ubuntu-optional) (optional)
+ - [Create a virtual environment](https://python-package.modar.me/requirements/#create-a-python-virtual-environment-on-ubuntu)
+ - [Install JupyterLab](https://python-package.modar.me/requirements/#installing-jupyterlab-optional) (optional)
+ - [Install Poetry](https://python-package.modar.me/requirements/#installing-poetry)
 
 ## Usage
 
-We recommend using [VS Code](https://code.visualstudio.com/) and following the instructions provided [here](https://python_package.modar.me/usage/).
+We recommend using [VS Code](https://code.visualstudio.com/) and following the instructions provided [here](https://python-package.modar.me/usage/).
 
-- [Documentation and GitHub Pages hosting](https://python_package.modar.me/usage/#documentation)
-- [Command Line Interface (CLI)](https://python_package.modar.me/usage/#command-line-interface-cli)
-- [Linting and testing](https://python_package.modar.me/usage/#linting-and-testing)
+- [Documentation and GitHub Pages hosting](https://python-package.modar.me/usage/#documentation)
+- [Command Line Interface (CLI)](https://python-package.modar.me/usage/#command-line-interface-cli)
+- [Linting and testing](https://python-package.modar.me/usage/#linting-and-testing)
 
 ## License
 

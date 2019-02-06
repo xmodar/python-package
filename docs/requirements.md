@@ -119,8 +119,8 @@ sudo mv poetry.bash-completion /etc/bash_completion.d
 Now clone this repository and install it using poetry. The goal is to create a new virtual environment, which will be used for development:
 
 ```sh
-git clone https://github.com/ModarTensai/python_package
-cd python_package
+git clone https://github.com/ModarTensai/python-package
+cd python-package
 poetry install --extras jupyter
 ```
 

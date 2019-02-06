@@ -21,13 +21,15 @@ Adding documentation is as simple as modifying `mkdocs.yml` and `docs` folder. T
 
 Note: these IP addresses are from [this page](https://help.github.com/articles/setting-up-an-apex-domain/).
 
-Now to link your project page to your domain as `python_package.example.com` add:
+Now to link your project page to your domain as `python-package.example.com` add:
 
 | Type  | Name           | Value                             |
 |-------|----------------|-----------------------------------|
-| CNAME | python_package | &lt;github-username&gt;.github.io |
+| CNAME | python-package | &lt;github-username&gt;.github.io |
 
 Then, modify the `CNAME` file in `docs` to reflect these changes. 
+
+Note: The name of the package [must not](https://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_hostnames) have an underscore "_" in order to enable HTTPS for the domain name. Use "-" instead.
 
 Once you are satisfied with your modifications to `mkdocs.yml` and the documentation folder and wants to test out your website:
 
